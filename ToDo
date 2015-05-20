@@ -1,0 +1,12 @@
+
+•	(Critical) ExerciseTestCase run test case method Doesn’t look correct if there is no change. Should add “change = false;” into the empty else
+•	(Critical) Handle student exceptions more gracefully. Test for them when calling method and give a helpful message. In MethodCallingTestCase, doesn’t even use the exception information Needs to be fixed in all four subclasses.
+•	(Nice to have) In arrayreturntestcase trim the tries. Use if’s after that. Simplify, by just reporting all the contents in both arrays.. Not clear that the try catch around call method helps at all.
+•	(Critical) In method calling test case don’t talk about the length of the array. Talk about # of times the record method was called. Also beef up the wording in the parameter description method to talk not about a list of parameters, but a list of calls to the record method.
+•	(Nice to have). Fix RunTestCase so it never calls runTest more than once.
+•	(Critical) Create diagnostic tests for every exercise. As a rule of thumb:
+o	At least 3 tests for every exercise
+o	If there is a “boundary” case, test immediately below, at, and immediately above the boundary
+o	Be imaginative. Consider all the ways it could be done wrong and make sure your tests capture it.
+•	(important) Create a test plan detailing everything that needs to be tested.
+•	(important) Create several test versions of the JST that have varying of exercises correct, incorrect, and untouched. Shoot for 100% code coverage. For each, record include what the output should be.
