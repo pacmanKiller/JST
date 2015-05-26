@@ -17,9 +17,12 @@ public abstract class JavaTutorTester {
 		String [] result = new String [exerciseList2.size()];
 		for (int a = 0; a< exerciseList2.size(); a++){
 			try{
+			
 				String addToR = exerciseList2.get(a).runAllTestCases();				
 				result [a] = addToR;
+				System.out.println("a: "+a+" result of a: "+result[a]);
 			} catch (Exception e){
+				e.printStackTrace();
 				return null;
 			}
 		}
@@ -28,12 +31,14 @@ public abstract class JavaTutorTester {
 	}
 
 	public String reportExerciseResults(ArrayList<TutorExercise> exerciseList2, String [] results){
+		System.out.println("results[0]:" +results[0]);
 		String finString = "";
 		int firstNonCompleteRes = 0;
-		int firstUntouchedRes = results.length-1;
+		//initially results.length-1
+		int firstUntouchedRes = results.length;
 		
-		//Checking for first answer that is not Complete nor Same
-		while(firstNonCompleteRes<results.length-1&&(results [firstNonCompleteRes].equals("COMPLETE")||results [firstNonCompleteRes].equals("SAME"))){
+		//Checking for first answer that is neither Complete nor Same
+		while(firstNonCompleteRes<results.length-1 && (results [firstNonCompleteRes].equals("COMPLETE")||results [firstNonCompleteRes].equals("SAME"))){
 			firstNonCompleteRes++;
 		}
 		
@@ -52,16 +57,20 @@ public abstract class JavaTutorTester {
 		}
 		
 		//Adding untouched statement
-		if(firstUntouchedRes!=results.length-1){
+		//possibly a less than instead of not equal to
+		if(firstUntouchedRes<results.length-1){
 			finString += ("Exercises " + exerciseToString(exerciseList2.get(firstUntouchedRes)) + " through " + 
 					exerciseToString(exerciseList2.get(results.length-1)) + " have not been touched. \n");
 			
 			// check to see if only one untouched
-		} else if (results[firstUntouchedRes].equals("UNTOUCHED")){
+			//maybe should check if the arguments of the if are equal 
+		} else if (firstUntouchedRes==results.length-1){
 			finString+=("Exercise " + exerciseToString(exerciseList2.get(firstUntouchedRes)) + " has not been touched. \n");
 		}
 		
 		// From the last complete to the first noncomplete, we will look for errors
+		System.out.println("firstNonCompleteRes: " +firstNonCompleteRes + " firstUntouchedRes: "+firstUntouchedRes);
+		//maybe should be firstNonCompleteRes-1
 		int errorCheck = firstNonCompleteRes;
 		while( errorCheck < firstUntouchedRes){
 			if(!results[errorCheck].equals("COMPLETE")&&!results[errorCheck].equals("UNTOUCHED"))
