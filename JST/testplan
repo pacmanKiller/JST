@@ -1,0 +1,74 @@
+A really bad informal test plan layout...
+
+ First | Middle | End
+| Cor  | Cor  | Cor |
+| Cor |  Cor  | Wro |
+| Cor |   Cor  | Unc |
+| Cor  |  Wro   | Cor |
+| Cor |   Wro  | Wro |
+| Cor |   Wro   | Unc |
+| Cor  |   Unc   | Cor |
+| Cor |    Unc  | Wro |
+| Cor |  Unc   | Unc |
+
+| Wro  | Cor  | Cor |
+| Wro |  Cor  | Wro |
+| Wro |   Cor  | Unc |
+|Wro  |  Wro   | Cor |
+| Wro |   Wro  | Wro |
+| Wro |   Wro   | Unc |
+| Wro  |   Unc   | Cor |
+| Wro |    Unc  | Wro |
+| Wro |  Unc   | Unc |
+
+| Unc  | Cor  | Cor |
+| Unc |  Cor  | Wro |
+| Unc |   Cor  | Unc |
+| Unc  |  Wro   | Cor |
+| Unc |   Wro  | Wro |
+| Unc |   Wro   | Unc |
+| Unc  |   Unc   | Cor |
+| Unc |    Unc  | Wro |
+| Unc |  Unc   | Unc |
+
+^these are all absolute blocks(e.i. first 30 correct, second 30 wrong, 
+last ones unchanged)
+^First and end are always counted in absolute blocks ;)
+
+All of the ones with "variable middles" can be tested with the middle 
+types rotated around.
+| Cor  | Cor/Wro | Cor | <--reports only the wrong ones in middle
+| Cor  | Cor/Unc | Cor | <--reports unchanged or nothing special? No 
+reporting probably
+
+
+
+
+| Cor |  Cor  | Wro |
+| Cor |   Cor  | Unc |
+| Cor  |  Wro   | Cor |
+| Cor |   Wro  | Wro |
+| Cor |   Wro   | Unc |
+| Cor  |   Unc   | Cor |
+| Cor |    Unc  | Wro |
+| Cor |  Unc   | Unc |
+
+| Wro  | Cor  | Cor |
+| Wro |  Cor  | Wro |
+| Wro |   Cor  | Unc |
+|Wro  |  Wro   | Cor |
+| Wro |   Wro  | Wro |
+| Wro |   Wro   | Unc |
+| Wro  |   Unc   | Cor |
+| Wro |    Unc  | Wro |
+| Wro |  Unc   | Unc |
+
+| Unc  | Cor  | Cor |
+| Unc |  Cor  | Wro |
+| Unc |   Cor  | Unc |
+| Unc  |  Wro   | Cor |
+| Unc |   Wro  | Wro |
+| Unc |   Wro   | Unc |
+| Unc  |   Unc   | Cor |
+| Unc |    Unc  | Wro |
+| Unc |  Unc   | Unc |
