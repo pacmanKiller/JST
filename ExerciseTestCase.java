@@ -97,8 +97,13 @@ public abstract class ExerciseTestCase {
 			if (exceptionString.equals("ArrayIndexOutOfBoundsException") || exceptionString.equals("IndexOutOfBoundsException")){
 				diagnosticString = "Check the size of the array and which element that is called";
 			} 
-			//if (exceptionString.equals(""))
-
+			if (exceptionString.equals("NullPointerException")){
+				diagnosticString = "Check if an array was created";
+			}
+			if (exceptionString.equals("IllegalArgumentException")){
+				diagnosticString = "Check the parameters of the method being called";
+			}
+			
 			return "an error! The method found was: " + 
 			exercise.getTutorName()+exercise.getUnitNumber()+"_"+exercise.getLessonNumber()+"_"+exercise.getExerciseNumber() + ". " + "Invoking the method found caused an exception." + "\n"
 			+ "The exception thrown was of type: " + exceptionString + ". " + diagnosticString;
