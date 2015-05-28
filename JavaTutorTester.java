@@ -20,7 +20,6 @@ public abstract class JavaTutorTester {
 			
 				String addToR = exerciseList2.get(a).runAllTestCases();				
 				result [a] = addToR;
-				System.out.println("a: "+a+" result of a: "+result[a]);
 			} catch (Exception e){
 				e.printStackTrace();
 				return null;
@@ -31,20 +30,19 @@ public abstract class JavaTutorTester {
 	}
 
 	public String reportExerciseResults(ArrayList<TutorExercise> exerciseList2, String [] results){
-		System.out.println("results[0]:" +results[0]);
 		String finString = "";
 		int firstNonCompleteRes = 0;
 		//initially results.length-1
 		int firstUntouchedRes = results.length;
 		
 		//Checking for first answer that is neither Complete nor Same
-		while(firstNonCompleteRes<results.length-1 && (results [firstNonCompleteRes].equals("COMPLETE")||results [firstNonCompleteRes].equals("SAME"))){
+		while(firstNonCompleteRes<results.length && (results [firstNonCompleteRes].equals("COMPLETE")||results [firstNonCompleteRes].equals("SAME"))){
 			firstNonCompleteRes++;
 		}
 		
 		if(results[0].equals("COMPLETE")||results[0].equals("SAME")){
 			if(firstNonCompleteRes>1){
-				finString += ("You have completed exercises " + exerciseToString(exerciseList2.get(0))+ 
+				finString += ("You have completed exercises " + exerciseToString(exerciseList2.get(0))+ " through "+
 				exerciseToString(exerciseList2.get(firstNonCompleteRes-1))+ ".\n");
 			} else {
 				finString += ("You have completed exercise " + exerciseList2.get(0).getUnitNumber()+"." + 
@@ -52,8 +50,10 @@ public abstract class JavaTutorTester {
 			}
 			//Either only one exercise completed at the start or none at all, time to check
 		} 
-		while(results [firstNonCompleteRes].equals("UNTOUCHED")&&firstNonCompleteRes!=0){
-			firstUntouchedRes--;				
+		int firstNonCompleteResForLater=firstNonCompleteRes;
+		while(results[firstUntouchedRes-1].equals("UNTOUCHED")||results [firstUntouchedRes-1].equals("SAME")&&firstUntouchedRes!=firstNonCompleteRes){
+			firstUntouchedRes--;
+			
 		}
 		
 		//Adding untouched statement
@@ -69,7 +69,6 @@ public abstract class JavaTutorTester {
 		}
 		
 		// From the last complete to the first noncomplete, we will look for errors
-		System.out.println("firstNonCompleteRes: " +firstNonCompleteRes + " firstUntouchedRes: "+firstUntouchedRes);
 		//maybe should be firstNonCompleteRes-1
 		int errorCheck = firstNonCompleteRes;
 		while( errorCheck < firstUntouchedRes){
