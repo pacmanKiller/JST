@@ -105,7 +105,8 @@ public class TutorExercise implements Comparable <TutorExercise> {
 		
 		for (int run = 0; run < numOfTestCase; run ++){
 		        ExerciseTestCase currentTest = allTestToRun[run];
-		        resultCheck.add(currentTest.runTestCase());
+		        String testResult=currentTest.runTestCase();
+		        resultCheck.add(testResult);
 		}
 				
 		//Now we can have result-s like completeuntouchedsame so we have to deal with them
