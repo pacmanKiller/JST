@@ -40,6 +40,7 @@ public abstract class ExerciseTestCase {
 
 		if(this.getDescription().length>=3&& this.getDescription()[2]!=null){
 			if(this.runTest(this.description[0], this.description[1]) != null) {
+				//correct abswer run not null
 			} else {
 				matchExpected = true;
 			}
