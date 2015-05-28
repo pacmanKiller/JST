@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public abstract class ExerciseTestCase {
 	private TutorExercise exercise;
 	private Object[][] description;
-
 	public TutorExercise getExercise(){
 		return exercise;
 	}
@@ -19,25 +18,21 @@ public abstract class ExerciseTestCase {
 	public void setDescription(Object[][] inputDescription){
 		description = inputDescription;
 	}
-
 	ExerciseTestCase(Object[][] description){
 		this.description = description;
 	}
 	public String runTestCase(){
-		//				The first element of the array is an array describing the conditions under which the test should be run. 
-		//				The second element of the array is an array describing the expected results if it is correct. 
-		//				The third element is an array describing the expected results if it has not been touched. 
-		//				If the array only has two elements, or if the third array is null, that means the 
-		//				initial and final results are the same. Fourth and further elements are ignored (but may be used by the subclasses).
-
+		// The first element of the array is an array describing the conditions under which the test should be run.
+		// The second element of the array is an array describing the expected results if it is correct.
+		// The third element is an array describing the expected results if it has not been touched.
+		// If the array only has two elements, or if the third array is null, that means the
+		// initial and final results are the same. Fourth and further elements are ignored (but may be used by the subclasses).
 		String result = "";
 		boolean matchExpected = false;
 		boolean changed = true;
-
 		// Either there is a third element or there isn't
 		// If there is and it is not null, then the test expects the end result to be different from the start
 		// else, there is not a third element or it is null and the test expects the code to remain unchanged
-
 		if(this.getDescription().length>=3&& this.getDescription()[2]!=null){
 			if(this.runTest(this.description[0], this.description[1]) != null) {
 				//correct abswer run not null
@@ -58,7 +53,6 @@ public abstract class ExerciseTestCase {
 				changed = false;
 			}
 		}
-
 		if(matchExpected && changed ){
 			return "COMPLETE";
 		} else if(matchExpected && (!changed)){
@@ -88,16 +82,26 @@ public abstract class ExerciseTestCase {
 		}		
 		try {		
 			if (foundMatch){
-				//invokes the matched method with the array of parameters		
+				//invokes the matched method with the array of parameters	
 				return test.getClass().getMethods()[matchMethodIndex].invoke(test, ((description[0])));
 			}	
 		} catch (Exception e) {
-			StringWriter sw = new StringWriter();
-			e.printStackTrace(new PrintWriter(sw));
-			String exceptionString = sw.toString();
-			return "Error! Invoking the method found caused an exception. The method found was: " + 
-			exercise.getTutorName()+exercise.getUnitNumber()+"_"+exercise.getLessonNumber()+"_"+exercise.getExerciseNumber() + ". \n"
-			+ exceptionString;
+			//			StringWriter sw = new StringWriter();
+			//			e.printStackTrace(new PrintWriter(sw));
+			//			String exceptionString = sw.toString();
+
+			Throwable cause = e.getCause();
+			String exceptionString = cause.getClass().getSimpleName();
+			String diagnosticString = "";
+
+			if (exceptionString.equals("ArrayIndexOutOfBoundsException") || exceptionString.equals("IndexOutOfBoundsException")){
+				diagnosticString = "Check the size of the array and which element that is called";
+			} 
+			//if (exceptionString.equals(""))
+
+			return "an error! The method found was: " + 
+			exercise.getTutorName()+exercise.getUnitNumber()+"_"+exercise.getLessonNumber()+"_"+exercise.getExerciseNumber() + ". " + "Invoking the method found caused an exception." + "\n"
+			+ "The exception thrown was of type: " + exceptionString + ". " + diagnosticString;
 		}
 		return "Did not find matching method! The method searched for was: " + 
 		exercise.getTutorName()+exercise.getUnitNumber()+"_"+exercise.getLessonNumber()+"_"+exercise.getExerciseNumber();
@@ -107,11 +111,10 @@ public abstract class ExerciseTestCase {
 		for (int paramExamine = 0; paramExamine < parameters.length; paramExamine ++ ){
 			if(paramExamine ==0){
 				parameterElements = "" + parameters [paramExamine];
-			} else 
+			} else
 				parameterElements += "," + parameters [paramExamine];
 		}
 		return "Called with parameters " + parameterElements + " ";
 	}
-
 	public abstract String runTest(Object[] parameters, Object[] expectedResult);
 }
