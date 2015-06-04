@@ -10,7 +10,7 @@ public class JST {
 	 * value of x instead.
 	 */
 	public static int JST_1_1_1(int x){
-		x=x+2;
+		x=x+4;
 		return x;
 	}
 
@@ -21,7 +21,7 @@ public class JST {
 	 * multiplies x by 5 instead.
 	 */
 	public static int JST_1_1_2(int x){
-		x=x*3;
+		x=x*5;
 		return x;
 	}
 	
@@ -32,7 +32,7 @@ public class JST {
 	 * divides x by 6.
 	 */
 	public static int JST_1_1_3(int x){
-		x=x/2;
+		x=x/6;
 		return x;
 	}
 	
@@ -52,7 +52,7 @@ public class JST {
 	 * x when divided by 3.
 	 */
 	public static int JST_1_1_5(int x){
-		x = x % 3;
+		x = x % 2;
 		return x;
 	}
 	
@@ -73,7 +73,7 @@ public class JST {
 	 * everything after the decimal point is
 	 * removed.
 	 */
-	public static double JST_1_1_7(int x){
+	public static double JST_1_1_7(double x){
 		return x;
 	}
 	
@@ -82,7 +82,7 @@ public class JST {
 	 * subtracts z and returns the result.
 	 * Change the method so that it first subtracts z
 	 * from y (y-z) and then multiplies that product
-	 * by x, returrning the result.
+	 * by x, returning the result.
 	 * 
 	 */
 	public static int JST_1_1_8(int x, int y, int z){
@@ -188,7 +188,7 @@ public class JST {
 	 * it's smaller than 10. Otherwise it
 	 * returns 10. Change it so that it returns
 	 * 5 if x is smaller than 5, and the value
-	 * of x otherwise..
+	 * of x otherwise.
 	 */
 	
 	public static double JST_1_3_4(double x){
@@ -205,7 +205,7 @@ public class JST {
 	 */
 	
 	public static int JST_1_3_5(){
-		return (int) (Math.random()*2) + 1;
+		return (int)( (Math.random()*3) + 1);
 	}
 	
 	/*
@@ -289,7 +289,7 @@ public class JST {
 	 * string XYZ.
 	 */
 	
-	public static String JST_2_1_6(String s){
+	public static String JST_2_1_6(){
 		return "ABC";
 	}
 
@@ -341,13 +341,7 @@ public class JST {
 	 * string s followed by a comma followed
 	 * by the string t.
 	 */
-	/*
-	 * The following string returns a string
-	 * that is equal to s followed by the letter
-	 * L. Change it so that it returns a string
-	 * that is equal to s followed by the letter
-	 * D.
-	 */
+
 	public static String JST_2_2_3(String s, String t){
 		return s;
 	}
@@ -360,7 +354,7 @@ public class JST {
 	 * string.
 	 */
 	
-	public static String JST_2_2_4(String s){
+	public static String JST_2_2_4(){
 		String t;
 		t="";
 		return "B";
@@ -464,8 +458,8 @@ public class JST {
 	 */
 	public static int JST_3_1_4(double x){
 		int y = 5;
-		if (x != 2.0)
-			y=9;
+		if (x != 9.0)
+			y=3;
 		return y;
 	}
 	
@@ -1108,31 +1102,5 @@ public class JST {
 		public int JST_5_3_9(int[] a){
 			return 4;
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-	
-	
-	
-	
-		
-	
-	
-	
-	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 
 }
