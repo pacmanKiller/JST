@@ -205,7 +205,7 @@ public class JST {
 	 */
 	
 	public static int JST_1_3_5(){
-		return (int)( (Math.random()*3) + 1);
+		return (int)( (Math.random()*2) + 1);
 	}
 	
 	/*
@@ -488,22 +488,10 @@ public class JST {
 	}
 	
 	/*
-	 * This method returns 2 if x is greater than 9 and 4
-	 * otherwise. Change it so that it returns 2 only if
-	 * x is not equal to 9, and 4 otherwise.
-	 */
-	public static int JST_3_1_7(double x){
-		int y = 4;
-		if (x > 9)
-			y=2;
-		return y;
-	}
-	
-	/*
 	 * This method always returns 8. Change so that it
 	 * returns 12 when x is equal to 1 and 8 otherwise.
 	 */
-	public static int JST_3_1_8(double x){
+	public static int JST_3_1_7(double x){
 		int y = 8;
 		return y;
 	}
@@ -522,10 +510,9 @@ public class JST {
 	 * bracket (}).
 	 */
 	
-	//MODIFIED FOR TESTING
 	public static void JST_3_2_1(double x){
+		Recorder.record(1);
 		if (x>4){
-			Recorder.record(1);
 			Recorder.record(2);
 			Recorder.record(3);
 		}
@@ -625,7 +612,7 @@ public class JST {
 		 * x is equal to 2 and y is equal to 16, and to
 		 * return 12 otherwise.
 		 */
-		public static int JST_3_3_3(int x, int y, int z){
+		public static int JST_3_3_3(int x, int y){
 			int a=12;
 			if (x==2)
 				a=4;
@@ -638,7 +625,7 @@ public class JST {
 		 * x is equal to 7 or x is equal to 9, and to
 		 * return 10 otherwise.
 		 */
-		public static int JST_3_3_4(int x, int y){
+		public static int JST_3_3_4(int x){
 			int a=10;
 			if (x==7)
 				a=5;
@@ -654,7 +641,7 @@ public class JST {
 		 */
 		public static int JST_3_3_5(String s, String t){
 			int a=8;
-			if ((!s.equals("CAT")) && (t.equals("CAT")))
+			if ((!s.equals("DOG")) && (t.equals("CAT")))
 				a=3;
 			return a;
 		}
@@ -663,14 +650,14 @@ public class JST {
 		 * This method calls Recorder.record(1) if x is
 		 * greater than 2 and Recorder.record(2) otherwise.
 		 * Change it so that if x is not greater than 2, it
-		 * calls recorder.record(3) instead.
+		 * calls Recorder.record(3) instead.
 		 */
 
 		public static void JST_3_4_1(int x){
 			if (x>2)
 				Recorder.record(1);
 			else
-				Recorder.record(3);
+				Recorder.record(2);
 		}
 		
 		/*
@@ -682,6 +669,7 @@ public class JST {
 		 */
 
 		public static void JST_3_4_2(int x){
+			
 			if (x>=7)
 				Recorder.record(1);
 		}
@@ -690,7 +678,7 @@ public class JST {
 		 * This method calls Recorder.record(1) and 
 		 * Recorder.record(2) if x is
 		 * less than or equal to 9. Otherwise it calls
-		 * Recorder.record(3) and Recorder.record(5).
+		 * Recorder.record(3) and Recorder.record(4).
 		 * Finally it calls Recorder.record(5).
 		 * Change it so that it only calls
 		 * Recorder.record(5) when x is less than or equal
@@ -699,6 +687,7 @@ public class JST {
 		 */
 
 		public static void JST_3_4_3(int x){
+//			System.out.println("Called with: "+x);
 			if (x<=9){
 				Recorder.record(1);
 				Recorder.record(2);
