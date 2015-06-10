@@ -8,6 +8,7 @@ public class Recorder {
 	static Object [] toReturnList = null;
 	static int numTimesCalled = 0;
 	public static Object record(Object ob){
+		System.out.println(ob.toString());
 		sentToRecord.add(ob);
 		if(toReturnList!=null&&numTimesCalled<toReturnList.length){
 			numTimesCalled++;
