@@ -43,12 +43,34 @@ public class notesTestJavaTutorTesterAdd extends JavaTutorTester {
 		this.AddTutorExercise("JST", 3, 1, 3, "MethodCallReturnTestCase", new Object [][][] {{{1}, {2}, {3}}, {{14}, {14}, {11}}, {{11}, {14}, {14}}});
 		this.AddTutorExercise("JST", 3, 1, 4, "MethodCallReturnTestCase", new Object [][][] {{{9}, {6}, {4}}, {{3}, {5}, {3}}, {{5}, {3}, {3}}});
 		this.AddTutorExercise("JST", 3, 1, 5, "MethodCallReturnTestCase", new Object [][][] {{{3}, {22}, {15}}, {{1}, {0}, {0}}, {{0}, {0}, {1}}});
-
-
+		this.AddTutorExercise("JST", 3, 1, 6, "MethodCallReturnTestCase", new Object [][][] {{{2}, {11}, {9}}, {{2}, {2}, {4}}, {{4}, {2}, {4}}});
+		this.AddTutorExercise("JST", 3, 1, 7, "MethodCallReturnTestCase", new Object [][][] {{{1}, {4}, {5}}, {{12}, {8}, {8}}, {{8}, {8}, {8}}});
+		this.AddTutorExercise("JST", 3, 2, 1, "MethodCallingTestCase", new Object [][][] {{{1}, {4}, {5}}, {{}, {}, {1,2,3}}, {{1}, {1}, {1,2,3}}});
+		this.AddTutorExercise("JST", 3, 2, 2, "MethodCallingTestCase", new Object [][][] {{{1}, {3}, {5}}, {{1,2,3}, {}, {1,2,3}}, {{1,2,3}, {3}, {1,2,3}}});
+		this.AddTutorExercise("JST", 3, 2, 3, "MethodCallingTestCase", new Object [][][] {{{1}, {3}, {7}}, {{2}, {2}, {1,2}}, {{}, {}, {1,2}}});
+		this.AddTutorExercise("JST", 3, 2, 4, "MethodCallingTestCase", new Object [][][] {{{10}, {11}, {12}}, {{1,2,3}, {1}, {1}}, {{1,2,3}, {}, {}}});
+		this.AddTutorExercise("JST", 3, 2, 5, "MethodCallingTestCase", new Object [][][] {{{1}, {9}, {11}}, {{1,2,3,4}, {1,4}, {1,4}}, {{1,2,3,4}, {1,2,3,4}, {1,2,3,4}}});
+		this.AddTutorExercise("JST", 3, 3, 1, "MethodCallReturnTestCase", new Object [][][] {{{8,11,2}, {4,7,3}, {8,12,2}}, {{4}, {3}, {3}}, {{4}, {3}, {4}}});
+		this.AddTutorExercise("JST", 3, 3, 2, "MethodCallReturnTestCase", new Object [][][] {{{9}, {3}, {2}, {8}}, {{6}, {1}, {6}, {1}}, {{6}, {6}, {1}, {1}}});
+		this.AddTutorExercise("JST", 3, 3, 3, "MethodCallReturnTestCase", new Object [][][] {{{2,16}, {2,14}, {3,12}}, {{4}, {12}, {12}}, {{4}, {4}, {12}}});
+		this.AddTutorExercise("JST", 3, 3, 4, "MethodCallReturnTestCase", new Object [][][] {{{7}, {8}, {9}}, {{5}, {10}, {5}}, {{5}, {10}, {10}}});
+		this.AddTutorExercise("JST", 3, 3, 5, "MethodCallReturnTestCase", new Object [][][] {{{"DOG","CAT"}, {"TROLL","OGRE"}, {"OGRE","CAT"}}, {{8}, {3}, {8}}, {{3}, {8}, {3}}});
+		this.AddTutorExercise("JST", 3, 4, 1, "MethodCallingTestCase", new Object [][][] {{{1}, {2}, {3}}, {{3}, {3}, {1}}, {{2}, {2}, {1}}});
+		this.AddTutorExercise("JST", 3, 4, 2, "MethodCallingTestCase", new Object [][][] {{{6}, {7}, {8}}, {{2}, {1}, {1}}, {{}, {1}, {1}}});
+		this.AddTutorExercise("JST", 3, 4, 3, "MethodCallingTestCase", new Object [][][] {
+				{
+					{8}, {9}, {11}
+				}, 
+				{
+					{1,2,5}, {1,2,5}, {3,4,5}
+				},
+				{
+					{1,2,5}, {1,2,5}, {3,4,5}
+				}
+				
+		});
 
 		
-
-
 	}
 	public static void main(String[] args) throws Exception{		
 		JavaTutorTester testAdd = new notesTestJavaTutorTesterAdd();
