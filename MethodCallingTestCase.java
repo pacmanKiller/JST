@@ -22,7 +22,10 @@ public class MethodCallingTestCase extends ExerciseTestCase {
 	}
 	public String runTest(Object[] parameters, Object[] expectedResult) {
 
-		Recorder.reset();
+//		Recorder.reset();
+		
+		
+		
 		String mismatch = "";
 		String badResultString = null;
 		String expectedResultString = null;
