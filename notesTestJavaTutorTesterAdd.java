@@ -1,5 +1,3 @@
-package Tutor;
-
 public class notesTestJavaTutorTesterAdd extends JavaTutorTester {
 
 	public void addAllExercises() {
@@ -76,7 +74,13 @@ public class notesTestJavaTutorTesterAdd extends JavaTutorTester {
 		this.AddTutorExercise("JST", 5, 1, 3, "ArrayReturnTestCase", new Object [][][] {{}, {{new String[]{"FLY", "RUN", "HOP"}}}, {{new String[]{"FLY", "SEE", "HOP"}}}});
 		this.AddTutorExercise("JST", 5, 2, 1, "ArrayReturnTestCase", new Object [][][] {{new Integer[]{1,2,3,4,5,6}}, {{new Integer[]{1,2,3,4,6,6}}}, {{new Integer[]{1,2,6,4,5,6}}}});
 		this.AddTutorExercise("JST", 5, 2, 2, "ArrayReturnTestCase", new Object [][][] {{new Integer[]{1,2,3,4,5,6}}, {{new Integer[]{1,7,3,4,5,6}}}, {{new Integer[]{1,2,3,4,5,6}}}});
-		this.AddTutorExercise("JST", 5, 2, 3, "ArrayReturnTestCase", new Object [][][] {{{(new Integer[]{1,2,3,4,5,6}), 2}, {(new Integer[]{1,2,3,4,5,6}), 4}}, {{new Integer[]{1,7,3,4,5,6}}}, {{new Integer[]{1,2,3,4,5,6}}}});
+		this.AddTutorExercise("JST", 5, 2, 3, "ArrayReturnTestCase", new Object [][][] {{{(new Integer[]{1,2,3,4,5,6}), 2}, {(new Integer[]{1,2,3,4,5,6}), 4}}, {{new Integer[]{1,2,3,4,5,6}, 3}}, {{new Integer[]{1,2,8,4,5,6}},{new Integer[]{1,2,3,4,8,6}}, {new Integer[]{1,2,3,8,5,6}}},{{(new Integer[]{1,2,3,4,5,6})}, {(new Integer[]{1,2,3,4,5,6})}}, {{new Integer[]{1,2,3,4,5,6}}}});
+		this.AddTutorExercise("JST", 5, 2, 4, "ArrayReturnTestCase", new Object [][][] {{{(new Integer[]{1,2,3,4,5,6}), 2}, {(new Integer[]{1,2,3,4,5,6}), 4}}, {{new Integer[]{1,2,3,4,5,6}, 3}}, {{new Integer[]{7,7,8,4,5,6}},{new Integer[]{7,7,7,7,8,6}}, {new Integer[]{7,7,7,8,5,6}}},{{(new Integer[]{7,7,7,7,5,6})}, {(new Integer[]{7,7,7,7,5,6})}}, {{new Integer[]{7,7,7,7,5,6}}}});
+		this.AddTutorExercise("JST", 5, 2, 5, "ArrayReturnTestCase", new Object [][][] {{{(new Integer[]{1,2,3,4,5,6}), 0}, {(new Integer[]{1,2,3,4,5,6}), 1}}, {{new Integer[]{1,2,3,4,5,6}, 2}}, {{new Integer[]{5,5,5,5,5,6}},{new Integer[]{1,5,5,5,5,6}}, {new Integer[]{1,2,5,5,5,5}}},{{(new Integer[]{1,2,3,4,5,6})}, {(new Integer[]{1,2,3,4,5,6})}}, {{new Integer[]{1,2,3,4,5,6}}}});
+		this.AddTutorExercise("JST", 5, 3, 1, "MethodCallReturnTestCase", new Object [][][] {{{(new Integer[]{2,2,5,4,5,6})}, {(new Integer[]{3,2,6,4,5,6})}}, {{new Integer[]{4,2,7,4,5,6}}}, {{2},{3}, {4}},{{5}, {6}, {7}}});
+		this.AddTutorExercise("JST", 5, 3, 2, "MethodCallReturnTestCase", new Object [][][] {{{(new Integer[]{2,2,5,4,5,6}), 0}, {(new Integer[]{3,2,6,4,5,6}), 1}}, {{new Integer[]{4,2,7,4,5,6}, 2}}, {{2},{2}, {7}},{{0}, {0}, {0}}});
+
+
 
 	}
 	public static void main(String[] args) throws Exception{		
